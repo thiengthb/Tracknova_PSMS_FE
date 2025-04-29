@@ -15,7 +15,7 @@ interface Props {
 */ 
 function Logo({icon, text}: Props) {
   return (
-    <div className="logo flex justify-center items-center gap-x-4 p-6 text-white h-[150px]">
+    <div className="logo flex justify-center items-center gap-x-4 p-6 text-white h-[150px] font-bold font-popins">
         <img src = {icon.src} alt = {icon.alt} />
         <p>{text}</p>
     </div>

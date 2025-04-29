@@ -26,7 +26,7 @@ function Button({ path, text, textColor, bgColor, focus }: Props) {
         p-4 rounded-[20px] 
         w-[160px] h-[70px] 
         hover:cursor-pointer 
-        font-bold text-[20px]`
+        font-bold text-[20px] font-montserrat`
     return (
         <Link to={path}>
             <button type="button" className={buttonClass} >

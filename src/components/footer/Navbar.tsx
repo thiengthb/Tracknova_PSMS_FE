@@ -27,7 +27,7 @@ function Navbar() {
 
     return (
         <>
-            <ul className="navbar w-full flex justify-around p-5 bg-black rounded-[30px]">
+            <ul className="navbar w-full flex justify-around p-5 bg-[#F5FFFF] rounded-[30px]">
                 {
                     navLinks.map((link, index) => (
                         <li className="nav-item" key={index}>
