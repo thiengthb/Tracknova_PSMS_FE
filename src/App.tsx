@@ -3,6 +3,7 @@ import LogoIcon from './assets/svgs/logo.svg'
 import Button from './components/body/Button'
 import Navbar from './components/footer/Navbar'
 import Tabbar from './components/header/Tabbar'
+import Input from './components/body/Input'
 function App() {
 
   return (
@@ -17,6 +18,14 @@ function App() {
       <div className="mt-5">
         <Tabbar className=" text-[16px] font-opensans" contents={[{ text: "Hôm nay", path: 'today' }, { text: "Lịch sử", path: 'past' }]}></Tabbar>
       </div>
+      <div className="mt-5">
+      <Input type='text' placeHolder='Tim'></Input>
+      </div>
+
+      <div className="mt-5">
+        <Input type='password' placeHolder='Mat khau'></Input>
+      </div>
+      
     </>
   )
 }
