@@ -1,4 +1,5 @@
 // the icon helper used for navbar
+// get icon from svgs package
 
 export const defaultIcons = [
     <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -4,8 +4,20 @@ import Button from './components/body/Button'
 import Navbar from './components/footer/Navbar'
 import Tabbar from './components/header/Tabbar'
 import Input from './components/body/Input'
-function App() {
+import Card from './components/body/Card'
+import {cardImgs} from './helpers/HCard-img'
+import DebtOrderItem from './components/body/DebtOrderItem'
+import ProductInOrder from './components/body/ProductInOrder'
+import InvoiceItem from './components/body/InvoiceItem'
 
+function App() {
+  const debtchild = <DebtOrderItem title='5 hộp x, 10 lọ y, 3 chiếc z' debt='50.000'></DebtOrderItem>
+  const ProductInOrderChild = <ProductInOrder title='San pham' price= {50000} amount={1} ></ProductInOrder> 
+  const ProductInOrderChild2 = <ProductInOrder title='San pham' price= {50000} amount={1} edit = {true}></ProductInOrder>  
+  const InoviceChild = <InvoiceItem title='Nguyen Van A' debt={50000}></InvoiceItem>
+  const InoviceChild2 = <InvoiceItem title='Khach ban le' ></InvoiceItem>
+
+  
   return (
     <>
       <Logo icon={{ src: LogoIcon, alt: "My Logo" }} text="Tracknova" />
@@ -25,7 +37,27 @@ function App() {
       <div className="mt-5">
         <Input type='password' placeHolder='Mat khau'></Input>
       </div>
+
+      <div className="mt-5">
+        <Card img={{src:cardImgs.product.src, alt: cardImgs.product.alt}} child={debtchild}></Card>
+      </div>
+
+      <div className="mt-5">
+        <Card imgRound=' rounded-tl-[15px] rounded-bl-[15px]' imgBg = "bg-[#D9D9D9]" img={{src:cardImgs.productInOrder.src, alt: cardImgs.productInOrder.alt}} child={ProductInOrderChild}></Card>
+      </div>
+
+      <div className="mt-5">
+        <Card imgRound=' rounded-tl-[15px] rounded-bl-[15px]' imgBg = "bg-[#D9D9D9]" img={{src:cardImgs.productInOrder.src, alt: cardImgs.productInOrder.alt}} child={ProductInOrderChild2}></Card>
+      </div>
       
+
+      <div className="mt-5">
+        <Card imgRound=' rounded-full' imgBg = "bg-[#D9D9D9]" img={{src:cardImgs.cusAvt.src, alt: cardImgs.cusAvt.alt}} child={InoviceChild}></Card>
+      </div>
+
+      <div className="mt-5">
+        <Card imgRound=' rounded-full' imgBg = "bg-[#D9D9D9]" img={{src:cardImgs.cusAvt.src, alt: cardImgs.cusAvt.alt}} child={InoviceChild2 }></Card>
+      </div>
     </>
   )
 }
