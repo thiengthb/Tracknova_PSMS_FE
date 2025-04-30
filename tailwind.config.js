@@ -5,6 +5,7 @@ export default {
         fontFamily: {
           popins: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
           montserrat: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          opensans: ['Open+Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         },
       },
     },

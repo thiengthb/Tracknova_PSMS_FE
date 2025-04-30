@@ -2,6 +2,7 @@ import { defaultIcons } from "../../helpers/HNav-icon"
 import { Link } from 'react-router-dom'
 import { useState } from "react"
 import React from 'react'
+
 /*
     This is footer navbar of the app
     including 5 icons that will navigate the user
@@ -25,7 +26,7 @@ function Navbar() {
             <ul className="navbar w-full flex justify-around p-5 bg-[#F5FFFF] rounded-[30px]">
                 {
                     navLinks.map((link, index) => {
-                        // clone the svg to add more style when it is clicked
+                        // clone the SVG to add more style and handle clicked
                         const styleIcon = React.cloneElement(defaultIcons[index], {
                             onClick: () => setActiveIndex(index),
                             style: {
@@ -35,6 +36,7 @@ function Navbar() {
                         })
 
                         return (
+                            // add the styled icon to the navbar
                             <li className="nav-item" key={index}>
                                 <Link to={link}>
                                     {styleIcon}

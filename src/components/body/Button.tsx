@@ -4,7 +4,8 @@ interface Props {
     text: string,
     textColor?: string,
     bgColor: string,
-    focus: string
+    focus: string,
+    className?: string
 }
 
 /*
@@ -16,17 +17,16 @@ interface Props {
         + text color (optional): the text color
         + bgColor: color of the buttons background
         + focus: changes with focus property
+        + className (optional): external style
 */ 
-function Button({ path, text, textColor, bgColor, focus }: Props) {
+function Button({ path, text, textColor, bgColor, focus, className }: Props) {
     const colorClass =  textColor ?? "text-dark"
     
     // style of button
     const buttonClass = `
-        ${colorClass} ${bgColor} ${focus}
-        p-4 rounded-[20px] 
-        w-[160px] h-[70px] 
-        hover:cursor-pointer 
-        font-bold text-[20px] font-montserrat`
+        ${colorClass} ${bgColor} ${focus}  
+        hover:cursor-pointer
+        ${className}`
     return (
         <Link to={path}>
             <button type="button" className={buttonClass} >
