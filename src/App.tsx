@@ -20,7 +20,7 @@ function App() {
   
   return (
     <>
-      <Logo icon={{ src: LogoIcon, alt: "My Logo" }} text="Tracknova" />
+      <LogoTemplate icon={{ src: LogoIcon, alt: "My Logo" }} text="Tracknova" />
       <Button path='/' text='Thêm' bgColor='bg-[#BEF0FF]' focus="focus:bg-[#0093CB]  focus:text-white" className='p-4 w-[160px] h-[70px] rounded-[20px] font-bold text-[20px] font-montserrat'></Button>
       <Button path='/' text='Xóa' bgColor='bg-[#F9B294]' focus="focus:bg-[#E8754C]" textColor="text-white" className='p-4 w-[160px] h-[70px] rounded-[20px] font-bold text-[20px] font-montserrat'></Button>
 
