@@ -1,0 +1,14 @@
+.logo {
+    background-color: #005ACD;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.logo p {
+    font-size: 48px;
+}
+
+.logo svg {
+    width: 50px;
+    height: 52px;
+}

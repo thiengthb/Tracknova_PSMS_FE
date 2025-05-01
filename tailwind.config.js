@@ -3,8 +3,9 @@ export default {
     theme: {
       extend: {
         fontFamily: {
-          sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          display: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          popins: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          montserrat: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          opensans: ['Open+Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         },
       },
     },
