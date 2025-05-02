@@ -1,6 +1,6 @@
-import productImg from '../../public/product-img.png'
-import productInOrder from '../../public/product-order.png'
-import customerAvtr from '../../public/customer-avartar.png'
+import productImg from '../assets/pngs/product-img.png'
+import productInOrder from '../assets/pngs/product-order.png'
+import customerAvtr from '../assets/pngs/customer-avartar.png'
 
 // get card images from public package
 export const cardImgs = {

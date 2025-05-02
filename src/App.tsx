@@ -6,9 +6,9 @@ import Tabbar from './components/header/Tabbar'
 import Input from './components/body/Input'
 import Card from './components/body/Card'
 import {cardImgs} from './helpers/HCard-img'
-import DebtOrderItem from './components/body/DebtOrderItem'
-import ProductInOrder from './components/body/ProductInOrder'
-import InvoiceItem from './components/body/InvoiceItem'
+import DebtOrderItem from './components/body/CDebtOrderItem'
+import ProductInOrder from './components/body/CProductInOrder'
+import InvoiceItem from './components/body/CInvoiceItem'
 
 function App() {
   const debtchild = <DebtOrderItem title='5 hộp x, 10 lọ y, 3 chiếc z' debt='50.000'></DebtOrderItem>
