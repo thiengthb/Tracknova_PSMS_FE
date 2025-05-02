@@ -22,12 +22,13 @@ function Tabbar({ contents, className }: Props) {
                 contents.map((content, index) => {
                     return (
                         <Button
+                            textColor='text-white'
                             bgColor='bg-[#0093CB]'
                             focus='focus:bg-[#005ACD]'
                             path={content.path}
                             text={content.text}
                             key={index}
-                            className = " w-full rounded-[10px] py-[8px] pl-[15px] pr-[12px]"
+                            className = " w-full rounded-[10px] py-[8px] pl-[15px] pr-[12px] font-bold font-[opensans]"
                             >
                         </Button>
                     )

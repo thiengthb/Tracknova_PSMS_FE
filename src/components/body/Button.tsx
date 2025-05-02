@@ -20,16 +20,11 @@ interface Props {
         + className (optional): external style
 */ 
 function Button({ path, text, textColor, bgColor, focus, className }: Props) {
-    const colorClass =  textColor ?? "text-dark"
+    const colorClass =  textColor ?? "text-black"
     
-    // style of button
-    const buttonClass = `
-        ${colorClass} ${bgColor} ${focus}  
-        hover:cursor-pointer
-        ${className}`
     return (
         <Link to={path}>
-            <button type="button" className={buttonClass} >
+            <button type="button" className={`${colorClass} ${bgColor} ${focus} hover:cursor-pointer ${className}`} >
                 {text}
             </button>
         </Link>

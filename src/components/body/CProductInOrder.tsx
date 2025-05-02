@@ -21,8 +21,8 @@ function ProductInOrder({ title, price, amount, edit }: Props) {
     return (
         <div className="flex justify-between grow">
             <div>
-                <p className="title text-[20px] font-bold">{title}</p>
-                <p className="remain text-[16px] text-[#0093CB]">{price}</p>
+                <p className="title text-[20px] font-bold font-[opensans]">{title}</p>
+                <p className="remain text-[16px] text-[#0093CB] font-bold font-[lato]">{price}</p>
             </div>
             <div className="flex items-center">
                 <p className="font-bold text-[18px]">x{amount}</p>

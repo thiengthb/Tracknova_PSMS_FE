@@ -1,0 +1,12 @@
+
+function EraseTag() {
+    return (
+        <button type="button" className="w-[376px] h-[100px] rounded-[15px] flex items-center justify-center bg-[#F9B294] hover:cursor-pointer focus:bg-[#E8754C]">
+            <svg width="21" height="30" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.47813 26.6667C1.47813 28.5 2.80845 30 4.4344 30H16.2595C17.8854 30 19.2157 28.5 19.2157 26.6667V6.66667H1.47813V26.6667ZM20.6939 1.66667H15.5204L14.0423 0H6.6516L5.17346 1.66667H0V5H20.6939V1.66667Z" fill="white" />
+            </svg>
+        </button>
+    )
+}
+
+export default EraseTag
