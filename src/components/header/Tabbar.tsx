@@ -14,7 +14,7 @@ interface Props {
     Reuse Button component for page link
 */ 
 function Tabbar({ contents, className }: Props) {
-    const tabbarClass = `tabbar grid grid-flow-col grid-auto-columns-[minmax(0,1fr)] gap-4 rounded-[13px] bg-[#0093CB] py-[5px] px-[7px] text-white ${className}`
+    const tabbarClass = `tabbar w-full grid grid-flow-col grid-auto-columns-[minmax(0,1fr)] gap-4 rounded-[13px] bg-[#0093CB] py-[5px] px-[7px] text-white ${className}`
 
     return (
         <div className= {tabbarClass} >

@@ -2,10 +2,10 @@ interface Props {
     title: string,
     customer: string,
     customerAddress: string,
-    customerProduct: number
+    quantity: number
 }
 
-function COrderItem({ title, customer, customerAddress, customerProduct }: Props) {
+function COrderItem({ title, customer, customerAddress, quantity }: Props) {
     return (
         <div className="flex grow justify-between">
             <div>
@@ -14,7 +14,7 @@ function COrderItem({ title, customer, customerAddress, customerProduct }: Props
                 <p className="text-[#565656] font-bold font-[lato]">{customerAddress}</p>
             </div>
             <div className="flex items-center">
-                <p className="text-[32px] text-[#F9B294] font-bold">{customerProduct}</p>
+                <p className="text-[32px] text-[#F9B294] font-bold">{quantity}</p>
             </div>
         </div>
     )

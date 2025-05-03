@@ -7,7 +7,8 @@ interface Props {
     }
     children: React.ReactNode
     imgBg?: string
-    imgRound?: string
+    imgRound?: string,
+    className?: string
 }
 
 /*
@@ -18,10 +19,10 @@ interface Props {
       + First: create the card child which contains the main content
       + Seconde: add the created child to the Card's prop
 */ 
-function Card({img, children, imgBg, imgRound}:Props) {
+function Card({img, children, imgBg, imgRound, className}:Props) {
 
   return (
-    <div className="card flex rounded-[15px] border-1 border-[#858390] w-[376px] h-[80px]">
+    <div className={`card flex rounded-[15px] border-1 border-[#858390] w-[376px] h-[80px] ${className}`}>
       <div className= { `${imgRound} ${imgBg}`}>
         <img className = "p-[20px]" src= {img.src} alt= {img.alt} />
       </div>
