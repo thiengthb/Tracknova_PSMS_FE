@@ -22,11 +22,11 @@ interface Props {
 function Card({img, children, imgBg, imgRound, className}:Props) {
 
   return (
-    <div className={`card flex rounded-[15px] border-1 border-[#858390] w-[376px] h-[80px] ${className}`}>
-      <div className= { `${imgRound} ${imgBg}`}>
+    <div className={`card flex rounded-[15px] border-1 border-[#858390] shadow-[0_4px_4px_rgba(0,0,0,0.25)] w-[376px] min-h-[80px] ${className}`}>
+      <div className= { `${imgRound} ${imgBg} flex items-center`}>
         <img className = "p-[20px]" src= {img.src} alt= {img.alt} />
       </div>
-      <div className=" px-[10px] card-content grow flex items-center">
+      <div className=" px-[10px] card-content grow flex items-center ">
         {children}
       </div>
     </div>

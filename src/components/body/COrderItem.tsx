@@ -1,11 +1,11 @@
-interface Props {
+export interface OrderProps {
     title: string,
     customer: string,
     customerAddress: string,
     quantity: number
 }
 
-function COrderItem({ title, customer, customerAddress, quantity }: Props) {
+function COrderItem({ title, customer, customerAddress, quantity }: OrderProps) {
     return (
         <div className="flex grow justify-between">
             <div>
