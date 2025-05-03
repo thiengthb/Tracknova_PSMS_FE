@@ -11,6 +11,7 @@ import CProductItem from './components/body/CProductItem'
 import COrderItem from './components/body/COrderItem'
 import CCustomerItem from './components/body/CCustomerItem'
 import EraseTag from './components/body/EraseTag'
+import Logo from './components/header/Logo'
 function App() {
   const debtchildren = <DebtOrderItem title='5 hộp x, 10 lọ y, 3 chiếc z' debt='50.000'></DebtOrderItem>
   const ProductInOrderchildren = <ProductInOrder title='San pham' price= {50000} amount={1} ></ProductInOrder> 
@@ -27,7 +28,7 @@ function App() {
     <>
       <Button path='/' text='Thêm' bgColor='bg-[#BEF0FF]' focus="focus:bg-[#0093CB]  focus:text-white" className='p-4 w-[160px] h-[70px] rounded-[20px] font-bold text-[20px] font-montserrat'></Button>
       <Button path='/' text='Xóa' bgColor='bg-[#F9B294]' focus="focus:bg-[#E8754C]" textColor="text-white" className='p-4 w-[160px] h-[70px] rounded-[20px] font-bold text-[20px] font-montserrat'></Button>
-
+      <Logo></Logo>
       <Navbar></Navbar>
       <Tabbar className=" text-[16px] font-opensans" contents={[{ text: "Sản phẩm", path: 'product' }, { text: "Công ty", path: 'company' }, { text: "Danh mục", path: 'category' }]}></Tabbar>
 
