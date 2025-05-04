@@ -15,7 +15,7 @@ interface Props {
     + icon: an object with src and alt attribute (svg, img...)
     + text: pure text
 */ 
-function LogoTemplate({icon, text}: Props) {
+export function LogoTemplate({icon, text}: Props) {
   return (
     <div className="logo flex justify-center items-center gap-x-4 p-6 text-white h-[150px] font-bold font-popins">
         <img src = {icon.src} alt = {icon.alt} />

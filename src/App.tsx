@@ -1,4 +1,4 @@
-import Logo from './components/header/Logo'
+import Logo, { LogoTemplate } from './components/header/Logo'
 import LogoIcon from './assets/svgs/logo.svg'
 import Button from './components/body/Button'
 import Navbar from './components/footer/Navbar'
