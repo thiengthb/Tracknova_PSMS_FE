@@ -1,4 +1,4 @@
-import { defaultIcons } from "../../helpers/HNav-icon"
+import { defaultIcons } from "../../utils/HNav-icon"
 import { Link } from 'react-router-dom'
 import { useState } from "react"
 import React from 'react'
@@ -13,11 +13,11 @@ function Navbar() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const navLinks = [
-        "/",
-        "/Product",
-        "/Invovice",
-        "/Customer",
-        "/Menu",
+        "/home?tab=currently",
+        "/products",
+        "/invoices",
+        "/customers",
+        "/menu",
     ]
 
 

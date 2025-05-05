@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 interface Props {
     path: string,
     text: string,
@@ -18,10 +18,10 @@ interface Props {
         + bgColor: color of the buttons background
         + focus: changes with focus property
         + className (optional): external style
-*/ 
+*/
 function Button({ path, text, textColor, bgColor, focus, className }: Props) {
-    const colorClass =  textColor ?? "text-black"
-    
+    const colorClass = textColor ?? "text-black"
+
     return (
         <Link to={path}>
             <button type="button" className={`${colorClass} ${bgColor} ${focus} hover:cursor-pointer ${className}`} >
