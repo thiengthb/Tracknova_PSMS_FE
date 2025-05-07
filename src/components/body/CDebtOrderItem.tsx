@@ -5,8 +5,8 @@ interface Props {
 function DebtOrderItem({title, debt}:Props) {
   return (
     <div className="flex flex-col ">
-      <p className="title text-[20px] font-bold font-[opensans]">{title}</p>
-      <p className="remain text-[16px] text-[#565656] font-bold font-[lato]">Còn nợ: <span className="text-[#F9B294]">{debt}</span></p>
+      <p className="title text-[20px] font-bold font-opensans">{title}</p>
+      <p className="remain text-[16px] text-[#565656] font-bold font-lato">Còn nợ: <span className="text-[#F9B294]">{debt}</span></p>
     </div>
   )
 }

@@ -12,9 +12,9 @@ function CCustomerItem({ customerTitle, phone, address }: Props) {
     return (
         <div className="flex grow justify-between">
             <div>
-                <p className="text-[20px] font-bold font-[opensans]">{customerTitle}</p>
-                <p className="text-[#565656] font-bold font-[lato]">{phone}</p>
-                <p className="text-[#565656] font-bold font-[lato]">{address}</p>
+                <p className="text-[20px] font-bold font-opensans">{customerTitle}</p>
+                <p className="text-[#565656] font-bold font-lato">{phone}</p>
+                <p className="text-[#565656] font-bold font-lato">{address}</p>
             </div>
             <div className="flex items-center hover:cursor-pointer" onClick={() => setClicked(!clicked)}>
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

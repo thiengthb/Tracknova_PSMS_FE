@@ -22,9 +22,9 @@ function InvoiceItem({ title, debt }: Props) {
     return (
         <div className="flex justify-between grow">
             <div>
-                <p className="title text-[20px] font-bold font-[opensans]">{title}</p>
+                <p className="title text-[20px] font-bold font-opensans">{title}</p>
                 {
-                    debt && <p className='text-[16px] text-[#565656] font-bold font-[lato]'>Còn nợ: <span className='text-[#F9B294]'>{debt}</span></p>
+                    debt && <p className='text-[16px] text-[#565656] font-bold font-lato'>Còn nợ: <span className='text-[#F9B294]'>{debt}</span></p>
                 }
             </div>
             <div className="flex items-center hover:cursor-pointer"  onClick={() => setClicked(!clicked)}>
