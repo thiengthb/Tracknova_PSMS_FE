@@ -32,7 +32,7 @@ function Tabbar({ contents, className}: Props) {
                             path={content.path}
                             text={content.text}
                             key={index}
-                            className = " w-full rounded-[10px] py-[8px] pl-[15px] pr-[12px] font-bold font-[opensans]"
+                            className = " w-full rounded-[10px] py-[8px] pl-[15px] pr-[12px] font-bold font-opensans"
                             >
                         </Button>
                     )
