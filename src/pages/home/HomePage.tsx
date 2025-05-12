@@ -1,15 +1,19 @@
 import Logo from '../../components/ui/header/Logo'
-import COrderItem, { OrderProps } from '../../components/COrderItem'
 import axios from 'axios'
 import Tabbar from '../../components/ui/header/Tabbar'
-import Card from '../../components/Card'
 import DateSeparator from '../../components/DateSeparator'
 import CompletePaymentBoard from './CompleteForm'
 import RemainForm from './RemainForm'
+import { OrderItemCard } from '../../components/card/Card'
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { cardImgs } from '../../utils/HCard-img'
 import { ordersByDate } from '../../utils/FakeDate'
+
+interface OrderProps {
+  customer: string,
+  customerAddress: string,
+  quantity: number
+}
 
 
 const currentOrderURL = "https://6816308932debfe95dbdb31f.mockapi.io/tracknova/api/Order"
@@ -57,13 +61,15 @@ const HomePage = () => {
     <div className="bg-[#EBEFEE] relative min-h-screen overflow-hidden">
       {/* confirm form */}
       <div className={isConfirmFormVisible || isRemainFormVisible ? `z-1 transition-all duration-700 ease-in-out w-full h-full bg-black/40 backdrop-blur-[1px] fixed inset-0` : "hidden"}></div>
+
       <div className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-500 ease-in-out
-        ${isConfirmFormVisible? "z-2 top-[30vh] opacity-100" : "z-1 -top-full opacity-0"}`}>
+        ${isConfirmFormVisible ? "z-2 top-[30vh] opacity-100" : "z-1 -top-full opacity-0"}`}>
         <CompletePaymentBoard onYesClick={handleYes} onNoClick={handleNo}></CompletePaymentBoard>
       </div>
+
       <div className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-500 ease-in-out
         ${isRemainFormVisible ? "z-2 top-[30vh] opacity-100" : "z-1 -top-full opacity-0"}`}>
-          <RemainForm onCancleClick={handlCancle} onYesClick={handleYes} tab = {activeTab}></RemainForm>
+        <RemainForm onCancleClick={handlCancle} onYesClick={handleYes} tab={activeTab}></RemainForm>
       </div>
       {/* end confirm form */}
 
@@ -89,21 +95,18 @@ const HomePage = () => {
         {/* end header */}
 
         {/* showing orders base on tab*/}
-        <div className="w-full h-[54vh] flex flex-col gap-[18px] pb-[5px] items-center ml-[17px] overflow-y-auto">
+        <div className="w-full h-[54vh] flex flex-col gap-[18px] pb-[5px] items-center ml-[18px] overflow-y-auto">
           {
             // fetch and display current orders
             activeTab === "currently" ?
               (
                 orders != null && orders.map((order, index) => {
-                  const orderItem = <COrderItem customer={order.customer} customerAddress={order.customerAddress} quantity={order.quantity}></COrderItem>
                   return (
-                    <Card
+                    <OrderItemCard key={index}
+                      customer={{ name: order.customer, address: order.customerAddress, quanity: order.quantity }}
                       onClick={() => setConfirmFormVisible(true)}
-                      key={index}
-                      children={orderItem}
-                      img={{ src: cardImgs.order.src, alt: cardImgs.order.alt }}
                       className="bg-white">
-                    </Card>
+                    </OrderItemCard>
                   )
                 })) : (
                 ordersByDate != null && ordersByDate.map((orders, i) => {
@@ -111,13 +114,12 @@ const HomePage = () => {
                     <DateSeparator date={orders.date}></DateSeparator>
                     {
                       orders.numberOfOrders.map((order, index) => {
-                        const orderItem = <COrderItem customer={order.customer} customerAddress={order.customerAddress} quantity={order.quantity}></COrderItem>
                         return <div key={index}>
-                          <Card onClick={() => setConfirmFormVisible(!isConfirmFormVisible)}
-                            children={orderItem}
-                            img={{ src: cardImgs.order.src, alt: cardImgs.order.alt }}
+                          <OrderItemCard key={index}
+                            customer={{ name: order.customer, address: order.customerAddress, quanity: order.quantity }}
+                            onClick={() => setConfirmFormVisible(true)}
                             className="bg-white">
-                          </Card>
+                          </OrderItemCard>
                         </div>
                       })
                     }
