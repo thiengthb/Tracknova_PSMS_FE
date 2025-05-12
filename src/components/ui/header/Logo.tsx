@@ -1,5 +1,5 @@
-import '../../assets/style/logo.css'
-import LogoIcon from '../../assets/svgs/logo.svg'
+import '../../../assets/style/logo.css'
+import LogoIcon from '../../../assets/svgs/logo.svg'
 
 interface Props {
     icon: {

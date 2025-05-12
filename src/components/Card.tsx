@@ -9,6 +9,7 @@ interface Props {
     imgBg?: string
     imgRound?: string,
     className?: string
+    onClick: () => void;
 }
 
 /*
@@ -19,14 +20,14 @@ interface Props {
       + First: create the card child which contains the main content
       + Seconde: add the created child to the Card's prop
 */ 
-function Card({img, children, imgBg, imgRound, className}:Props) {
+function Card({img, children, imgBg, imgRound, className, onClick}:Props) {
 
   return (
-    <div className={`card flex rounded-[15px] border-1 border-[#858390] shadow-[0_4px_4px_rgba(0,0,0,0.25)] w-[376px] min-h-[80px] ${className}`}>
+    <div onClick = {onClick} className={`card flex rounded-[15px] hover:cursor-pointer py-[6px] border-1 border-[#858390] shadow-[0_4px_4px_rgba(0,0,0,0.25)] w-[376px] ${className}`}>
       <div className= { `${imgRound} ${imgBg} flex items-center`}>
         <img className = "p-[20px]" src= {img.src} alt= {img.alt} />
       </div>
-      <div className=" px-[10px] card-content grow flex items-center ">
+      <div className=" px-[10px] card-content grow flex items-center">
         {children}
       </div>
     </div>

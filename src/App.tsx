@@ -1,5 +1,5 @@
 // import Button from './components/body/Button'
-import Navbar from './components/footer/Navbar'
+import Navbar from './components/ui/footer/Navbar'
 // import Tabbar from './components/header/Tabbar'
 // import Card from './components/body/Card'
 // import {cardImgs} from './helpers/HCard-img'

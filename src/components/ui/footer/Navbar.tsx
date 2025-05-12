@@ -1,4 +1,4 @@
-import { defaultIcons } from "../../utils/HNav-icon"
+import { defaultIcons } from "../../../utils/HNav-icon"
 import { Link } from 'react-router-dom'
 import { useState } from "react"
 import React from 'react'
