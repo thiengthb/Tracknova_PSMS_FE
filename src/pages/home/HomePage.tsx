@@ -8,6 +8,7 @@ import { OrderItemCard } from '../../components/card/Card'
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ordersByDate } from '../../utils/FakeDate'
+import { Input } from '@/components/ui/input'
 
 interface OrderProps {
   customer: string,
@@ -16,13 +17,13 @@ interface OrderProps {
 }
 
 
-const currentOrderURL = "https://6816308932debfe95dbdb31f.mockapi.io/tracknova/api/Order"
-const histroryOrderURL = "https://6816308932debfe95dbdb31f.mockapi.io/tracknova/api/Order-history"
+const CURRENT_ORDERS_URL = "https://6816308932debfe95dbdb31f.mockapi.io/tracknova/api/Order"
+const HISTORY_ORDERS_URL = "https://6816308932debfe95dbdb31f.mockapi.io/tracknova/api/Order-history"
 
 
 export function getOrders(isCurrent: boolean) {
   const [orders, setOrders] = useState<OrderProps[]>([])
-  const url = isCurrent ? currentOrderURL : histroryOrderURL
+  const url = isCurrent ? CURRENT_ORDERS_URL : HISTORY_ORDERS_URL
   useEffect(() => {
     axios.get(url)
       .then((response) => {
@@ -89,7 +90,7 @@ const HomePage = () => {
         <div className="header w-[375px] flex flex-col gap-[18px]">
           <Tabbar contents={[{ id: "currently", path: "/home?tab=currently", text: "Hôm nay" }, { id: "history", path: "/home?tab=history", text: "Lịch sử" }]}></Tabbar>
 
-          <input type="text" className="w-full rounded-[15px] border-2 border-[#858390] px-[20px] py-[10px]" placeholder="Tìm" />
+          <Input placeholder="tìm" className="border-2 border-[#858390]"></Input>
 
           <div className="flex w-full justify-between">
             <p className="font-bold font-monsterat text-[20px]">Tổng: <span className="text-[#F9B294]">{orders.length}</span></p>
