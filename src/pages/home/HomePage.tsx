@@ -1,6 +1,6 @@
-import Logo from '../../components/ui/header/Logo'
+import Logo from '../../components/layout/header/Logo'
 import axios from 'axios'
-import Tabbar from '../../components/ui/header/Tabbar'
+import Tabbar from '../../components/layout/header/Tabbar'
 import DateSeparator from '../../components/DateSeparator'
 import CompletePaymentBoard from './CompleteForm'
 import RemainForm from './RemainForm'
@@ -45,6 +45,7 @@ const HomePage = () => {
   const orders = getOrders(activeTab === "currently")
   const [isConfirmFormVisible, setConfirmFormVisible] = useState(false);
   const [isRemainFormVisible, setRemainFormVisible] = useState(false)
+  
   const handleYes = () => {
     setConfirmFormVisible(false)
   }
@@ -57,6 +58,12 @@ const HomePage = () => {
   const handlCancle = () => {
     setRemainFormVisible(false)
   }
+
+  const handleConfirmClick = (amount: number) => {
+    console.log(amount)
+    setRemainFormVisible(false)
+  }
+
   return (
     <div className="bg-[#EBEFEE] relative min-h-screen overflow-hidden">
       {/* confirm form */}
@@ -69,7 +76,7 @@ const HomePage = () => {
 
       <div className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-500 ease-in-out
         ${isRemainFormVisible ? "z-2 top-[30vh] opacity-100" : "z-1 -top-full opacity-0"}`}>
-        <RemainForm onCancleClick={handlCancle} onYesClick={handleYes} tab={activeTab}></RemainForm>
+        <RemainForm onCancleClick={handlCancle} onConfirmClick={handleConfirmClick} tab={activeTab}></RemainForm>
       </div>
       {/* end confirm form */}
 
@@ -77,7 +84,7 @@ const HomePage = () => {
       <div>
         <Logo></Logo>
       </div>
-      <div className="main-container flex flex-col justify-center items-center gap-[18px] mt-[18px] pb-[15px]">
+      <div className="main-container flex flex-col justify-center items-center gap-[18px] mt-[18px] ">
         {/* content header */}
         <div className="header w-[375px] flex flex-col gap-[18px]">
           <Tabbar contents={[{ id: "currently", path: "/home?tab=currently", text: "Hôm nay" }, { id: "history", path: "/home?tab=history", text: "Lịch sử" }]}></Tabbar>
@@ -95,7 +102,7 @@ const HomePage = () => {
         {/* end header */}
 
         {/* showing orders base on tab*/}
-        <div className="w-full h-[54vh] flex flex-col gap-[18px] pb-[5px] items-center ml-[18px] overflow-y-auto">
+        <div className="w-full h-[60vh] flex flex-col gap-[18px] pb-[5px] ml-[5px] items-center overflow-y-auto">
           {
             // fetch and display current orders
             activeTab === "currently" ?
